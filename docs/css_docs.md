@@ -10,4 +10,13 @@ hover : para cuando el mouse este encima
 flex: pone los elementos de un div, uno a lado de otro
 flex-col: pone los elementos de un div, uno a lado de otro por columna
 h-full: hace que el div ocupe todo el height
+mb-4: margin bottom de 4
 
+
+grid grid-cols-4: divide todo en 4 columnas
+col-span-1: le digo a un div, que use una de las anteriores 4 columnas
+
+relative: hace que las dimensiones a padding y eso, se ajusten a la de su contenedor padre
+absolute: toma la posicion de toda la pantalla en general
+
+flex-wrap: cuando ya no hay espacio, lo pone abajo

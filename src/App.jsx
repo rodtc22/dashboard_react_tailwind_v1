@@ -10,7 +10,9 @@ import {
   RiNotification2Line,
   RiArrowDownSLine,
   RiSearch2Line,
-  RiCheckboxBlankCircleFill
+  RiCheckboxBlankCircleFill,
+  RiFilter3Fill,
+  RiMapPinRangeLine
 } from "react-icons/ri";
 
 const App = () => {
@@ -92,7 +94,7 @@ const App = () => {
       <div className="col-span-5 ">
         
         {/* Header */}
-        <header className="flex flex-col md:flex-row items-center justify-between p-4 gap-4" >
+        <header className="flex flex-col md:flex-row items-center justify-between p-4  lg:pl-12 gap-4" >
           
           {/* Search */}
           <form className="w-full md:w-[40%] lg:w-[30%]  order-1 md:order-none">
@@ -119,8 +121,86 @@ const App = () => {
             </ul>
           </nav>
         </header>
+
+        {/* Content */}
+        <div className = "py-8 px-12 md:p-8 bg-gray-100">
+          
+          {/* Tittle */}
+          <div className="mb-4">
+            <h1 className="text-3xl font-semibold">Job Board</h1>
+          </div>
+
+          {/* Searching Content */}
+          <div className="grid md:grid-cols-4 grid-cols-1 gap-4 items-center mb-6">
+            <form className="col-span-2">
+              <div className="relative">
+                <RiSearch2Line className="absolute left-2 top-3 text-purple-600"/>
+                <input type="text" className="bg-white-100 w-full outline-none py-2 pl-8 pr-4" placeholder="Search" />
+              </div>
+            </form>
+
+            <form className="">
+              <div className="relative col-span-1">
+                <RiMapPinRangeLine className="absolute left-2 top-3 text-purple-600"/>
+                <select type="text" className="bg-white-100 w-full outline-none py-[9px] pl-8 pr-4" placeholder="Anywher" >
+                  <option value="Anywhere">Anywhere</option>
+                  <option value="Anywhere2">Anywhere2</option>
+                </select>
+              </div>
+            </form>
+
+            <form className="">
+              <div className="relative col-span-1">
+                <RiFilter3Fill className="absolute left-2 top-3 text-purple-600"/>
+                <input type="text" className="bg-white-100 w-full outline-none py-2 pl-8 pr-4" placeholder="Filters" />
+                <span className="absolute text-xs right-2 top-2 bg-purple-600 text-white px-[9px] py-1 rounded-full ">4</span>
+              </div>
+            </form>
+            
+          </div>
+
+          {/* Tags */}
+          <div className="flex gap-2 items-center flex-wrap">
+          <span className="bg-white flex item-center gap-4 py-2 pl-4 pr-6 rounded-full">
+              <button className="bg-purple-100 rounded-full p-1 text-purple-800 text-xs">
+                <RiCloseFill/>
+              </button>
+              <span className="text-gray-500"> Design </span>
+            </span>
+
+            <span className="bg-white flex item-center gap-4 py-2 pl-4 pr-6 rounded-full">
+              <button className="bg-purple-100 rounded-full p-1 text-purple-800 text-xs">
+                <RiCloseFill/>
+              </button>
+              <span className="text-gray-500"> Regular </span>
+            </span>
+
+            <span className="bg-white flex item-center gap-4 py-2 pl-4 pr-6 rounded-full">
+              <button className="bg-purple-100 rounded-full p-1 text-purple-800 text-xs">
+                <RiCloseFill/>
+              </button>
+              <span className="text-gray-500"> Full time </span>
+            </span>
+
+            <span className="bg-white flex item-center gap-4 py-2 pl-4 pr-6 rounded-full">
+              <button className="bg-purple-100 rounded-full p-1 text-purple-800 text-xs">
+                <RiCloseFill/>
+              </button>
+              <span className="text-gray-500"> B2B </span>
+            </span>
+            
+
+            <button className="text-gray-500 ml-4">
+              Clear all
+            </button>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
+
   );
 }
 
