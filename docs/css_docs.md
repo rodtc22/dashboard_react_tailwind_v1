@@ -20,3 +20,4 @@ relative: hace que las dimensiones a padding y eso, se ajusten a la de su conten
 absolute: toma la posicion de toda la pantalla en general
 
 flex-wrap: cuando ya no hay espacio, lo pone abajo
+drop-shadow-lg: le pone sombra al card

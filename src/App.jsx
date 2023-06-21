@@ -12,11 +12,16 @@ import {
   RiSearch2Line,
   RiCheckboxBlankCircleFill,
   RiFilter3Fill,
-  RiMapPinRangeLine
+  RiMapPinRangeLine,
+  RiDropboxFill,
+  RiTwitchFill,
+  RiGoogleFill,
+  RiAmazonFill
 } from "react-icons/ri";
 
 const App = () => {
-
+  const primaryColor = "text-red-600";
+  const secondaryColor = "text-purple-100";
   const [sidebar, setSidebar] = useState(false);
 
   const handleSidebar = () => {
@@ -86,7 +91,9 @@ const App = () => {
       </div>
       
       {/* Btn menu mobile */}
-      <button className="absolute bottom-4 right-4 bg-purple-600 text-white rounded-full text-2xl p-2 lg:hidden" onClick={() => { handleSidebar() }}>
+      <button 
+        className=" fixed bottom-4 right-4 bg-purple-600 text-white rounded-full z-40 text-2xl p-2 lg:hidden" 
+        onClick={() => { handleSidebar() }}>
         {sidebar ? <RiCloseFill /> : <RiMenuFill />}
       </button>
       
@@ -94,7 +101,7 @@ const App = () => {
       <div className="col-span-5 ">
         
         {/* Header */}
-        <header className="flex flex-col md:flex-row items-center justify-between p-4  lg:pl-12 gap-4" >
+        <header className="flex flex-col md:flex-row items-center justify-between p-4  lg:px-12 gap-4" >
           
           {/* Search */}
           <form className="w-full md:w-[40%] lg:w-[30%]  order-1 md:order-none">
@@ -132,7 +139,7 @@ const App = () => {
 
           {/* Searching Content */}
           <div className="grid md:grid-cols-4 grid-cols-1 gap-4 items-center mb-6">
-            <form className="col-span-2">
+            <form className="col-span-1 md:col-span-2">
               <div className="relative">
                 <RiSearch2Line className="absolute left-2 top-3 text-purple-600"/>
                 <input type="text" className="bg-white-100 w-full outline-none py-2 pl-8 pr-4" placeholder="Search" />
@@ -160,7 +167,7 @@ const App = () => {
           </div>
 
           {/* Tags */}
-          <div className="flex gap-2 items-center flex-wrap">
+          <div className="flex gap-2 items-center flex-wrap mb-20">
           <span className="bg-white flex item-center gap-4 py-2 pl-4 pr-6 rounded-full">
               <button className="bg-purple-100 rounded-full p-1 text-purple-800 text-xs">
                 <RiCloseFill/>
@@ -193,8 +200,146 @@ const App = () => {
             <button className="text-gray-500 ml-4">
               Clear all
             </button>
+
           </div>
 
+          {/* Results */}
+          <div className="flex justify-between gap-2 mb-8">
+            <p className="text-gray-500"> 
+              We've found 
+              <span className="text-purple-600 font-bold"> 523 </span>
+              jobs!
+            </p>
+            <p className="flex gap-2 items-center"> 
+              Sort by 
+              <span className="text-purple-600 font-bold hover:cursor-pointer"> 
+                Date
+              </span>{" "}
+              <RiArrowDownSLine /> 
+            </p>
+          </div>
+
+          {/* Cards */}
+          <a href="#" className="bg-white rounded-2xl p-8 flex flex-col md:flex-row gap-8 w-full  items-center drop-shadow-lg hover:border-purple-400 transition-all  border-2 border-transparent mb-4">
+            
+            {/* Icon */}
+            <div className="w-full md:w-[10%] items-center justify-center ">
+                <RiDropboxFill className=" text-7xl bg-purple-100  text-purple-600 p-4"/>  
+            </div>
+            
+            {/* Tittle */}
+            <div className="w-full md:w-[70%] ">
+              <h1 className="font-semibold text-xl flex items-center gap-4 mb-2">
+                UX Designer 
+                <span className="bg-purple-100 text-purple-600 text-xs font-bold py-1 px-2 rounded-md">Remote</span> 
+                <span className="bg-green-100 text-green-600 text-xs font-bold py-1 px-2 rounded-md">Scketch</span>
+              </h1>
+              <p className="text-gray-500">
+                Dropbox ---- Warzawa
+              </p>
+            </div>
+
+            {/* Date */}
+            <div className="w-full md:w-[20%] text-center md:text-end">
+              <h3 className="text-xl  text-gray-500 mb-2 ">
+                8.8 - 13.7k PLN
+              </h3>
+              <p className="text-gray-500">
+                2 days ago
+              </p>
+            </div>
+          </a>
+
+          <a href="#" className="bg-white rounded-2xl p-8 flex flex-col md:flex-row gap-8 w-full  items-center drop-shadow-lg hover:border-purple-400 transition-all  border-2 border-transparent mb-4">
+            
+            {/* Icon */}
+            <div className="w-full md:w-[10%] items-center justify-center ">
+                <RiTwitchFill className=" text-7xl bg-purple-100  text-purple-600 p-4"/>  
+            </div>
+            
+            {/* Tittle */}
+            <div className="w-full md:w-[70%] ">
+              <h1 className="font-semibold text-xl flex items-center gap-4 mb-2">
+                Producto Designer
+                <span className="bg-purple-100 text-purple-600 text-xs font-bold py-1 px-2 rounded-md">Remote</span> 
+                
+              </h1>
+              <p className="text-gray-500">
+                Twitch ---- Wroclaw
+              </p>
+            </div>
+
+            {/* Date */}
+            <div className="w-full md:w-[20%] text-center md:text-end">
+              <h3 className="text-xl  text-gray-500 mb-2 ">
+                8.2 - 13.5k PLN
+              </h3>
+              <p className="text-gray-500">
+                2 days ago
+              </p>
+            </div>
+          </a>
+
+          <a href="#" className="bg-white rounded-2xl p-8 flex flex-col md:flex-row gap-8 w-full  items-center drop-shadow-lg hover:border-purple-400 transition-all  border-2 border-transparent mb-4">
+            
+            {/* Icon */}
+            <div className="w-full md:w-[10%] items-center justify-center ">
+                <RiGoogleFill className=" text-7xl bg-purple-100  text-purple-600 p-4"/>  
+            </div>
+            
+            {/* Tittle */}
+            <div className="w-full md:w-[70%] ">
+              <h1 className="font-semibold text-xl flex items-center gap-4 mb-2">
+                UX/UI Designer
+                <span className="bg-purple-100 text-purple-600 text-xs font-bold py-1 px-2 rounded-md">Remote</span> 
+                <span className="bg-yellow-100 text-yellow-600 text-xs font-bold py-1 px-2 rounded-md">JavaScript</span> 
+              </h1>
+              <p className="text-gray-500">
+                Google ---- Warszawa
+              </p>
+            </div>
+
+            {/* Date */}
+            <div className="w-full md:w-[20%] text-center md:text-end">
+              <h3 className="text-xl  text-gray-500 mb-2 ">
+                7.5 - 12.5k PLN
+              </h3>
+              <p className="text-gray-500">
+                3 days ago
+              </p>
+            </div>
+          </a>
+          
+          <a href="#" className="bg-white rounded-2xl p-8 flex flex-col md:flex-row gap-8 w-full  items-center drop-shadow-lg hover:border-purple-400 transition-all  border-2 border-transparent mb-4">
+            
+            {/* Icon */}
+            <div className="w-full md:w-[10%] items-center justify-center ">
+                <RiAmazonFill className=" text-7xl bg-purple-100  text-purple-600 p-4"/>  
+            </div>
+            
+            {/* Tittle */}
+            <div className="w-full md:w-[70%] ">
+              <h1 className="font-semibold text-xl flex items-center gap-4 mb-2">
+                Amazon Designer
+                <span className="bg-purple-100 text-purple-600 text-xs font-bold py-1 px-2 rounded-md">Remote</span> 
+                <span className="bg-red-100 text-red-600 text-xs font-bold py-1 px-2 rounded-md">AWS</span> 
+              </h1>
+              <p className="text-gray-500">
+                Amazon ---- New York
+              </p>
+            </div>
+
+            {/* Date */}
+            <div className="w-full md:w-[20%] text-center md:text-end">
+              <h3 className="text-xl  text-gray-500 mb-2 ">
+                9.5 - 14.5k PLN
+              </h3>
+              <p className="text-gray-500">
+                1 days ago
+              </p>
+            </div>
+          </a>
+          
         </div>
 
       </div>
